@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Supercom__Backend.DTOs;
 using Supercom__Backend.Enums;
 using Supercom__Backend.Interfaces;
+using Supercom__Backend.Responses;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -23,13 +24,12 @@ namespace Supercom__Backend.Controllers
         }
 
         [HttpGet("search")]
-        public IEnumerable<TicketDTO> Search(
+        public SearchTicketsResponse Search(
             int? id, string title, string description, DateTime? createdAtFrom, DateTime? createdAtTo,
             TicketStatus? status, [BindRequired] int pageNumber, [BindRequired] int pageSize)
         {
-            return _mapper.ProjectTo<TicketDTO>(
-                _ticketsService.GetTickets(id, title, description, createdAtFrom, createdAtTo, status, pageNumber, pageSize)
-                .AsQueryable());
+            return 
+                _ticketsService.GetTickets(id, title, createdAtFrom, createdAtTo, status, pageNumber, pageSize, _mapper);
         }
 
         [HttpGet("{id}")]
@@ -39,9 +39,9 @@ namespace Supercom__Backend.Controllers
         }
 
         [HttpPost("createTicket")]
-        public async Task CreateTicket([FromBody] CreateTicketDTO createTicketDTO)
+        public async Task<TicketDTO> CreateTicket([FromBody] CreateTicketDTO createTicketDTO)
         {
-            await _ticketsService.CreateTicket(createTicketDTO);
+            return _mapper.Map<TicketDTO>(await _ticketsService.CreateTicket(createTicketDTO));
         }
 
         [HttpPut("updateTicket")]

@@ -9,5 +9,9 @@ namespace Supercom__Backend.DTOs
         public int Id { get; set; }
         public int TicketId { get; set; }
         public string Text { get; set; }
+
+        public string CreatedAt { get; set; }
+
+        public string UpdatedAt { get; set; }
     }
 }

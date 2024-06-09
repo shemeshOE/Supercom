@@ -8,7 +8,7 @@ namespace Supercom__Backend.AutoMapper
     {
         public MappingProfile()
         {
-            CreateMap<Ticket, TicketDTO>();
+            CreateMap<Ticket, TicketDTO>().ForMember(td => td.CreatedAt, opt => opt.MapFrom(t=>t.CreatedAt.ToString()+"z"));
             CreateMap<Comment, CommentDTO>();
         }
     }
