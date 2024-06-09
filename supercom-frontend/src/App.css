@@ -1,0 +1,214 @@
+.App {
+  text-align: center;
+  display: inline-flex;
+  flex-direction: column;
+  width: -webkit-fill-available;
+  padding: 1vh 5vw;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.form-input {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: flex-start;
+  label {
+    margin-bottom: 1vh;
+  }
+}
+
+.react-datepicker-wrapper {
+  margin-top: -0.4vh;
+}
+
+.form-select {
+  padding-block: 0.15vh;
+  width: 11vw;
+}
+
+.search-fields {
+  display: inline-flex;
+  width: 60vw;
+  justify-content: space-between;
+}
+
+.search-component {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 13vh;
+  align-items: flex-end;
+  align-self: center;
+  margin-top: 1vh;
+}
+
+button {
+  width: fit-content;
+  padding: 1vh 1vw;
+  background-color: darkslateblue;
+  border-color: white;
+  color: white;
+  &:hover,
+  &:disabled {
+    background-color: white;
+    border-color: darkslateblue;
+    color: black;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  &:disabled {
+    cursor: default;
+  }
+}
+
+button,
+input,
+select {
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+.App {
+  .MuiList-root {
+    width: 34vw;
+    display: inline-flex;
+    flex-direction: column;
+    border-width: 2px;
+    border-radius: 5px;
+    border-style: solid;
+    max-height: 64vh;
+    overflow: auto;
+    &.comments-list {
+      width: 24vw;
+      height: 60vh;
+    }
+  }
+}
+
+.ticket-details {
+  display: inline-flex;
+  flex-direction: column;
+  width: -webkit-fill-available;
+}
+
+.ticket-top-details {
+  display: inline-flex;
+  width: -webkit-fill-available;
+  justify-content: space-between;
+}
+
+.not-last {
+  border-bottom: solid;
+  border-bottom-style: groove;
+}
+
+.date-span {
+  align-self: flex-end;
+}
+
+.ticket-data {
+  display: inline-flex;
+  margin-top: 3vh;
+  justify-content: space-between;
+}
+
+.ticket-detailed-view {
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 5px;
+  width: 28vw;
+  padding: 1vh 1vw;
+  display: inline-flex;
+  flex-direction: column;
+  button {
+    align-self: flex-end;
+  }
+  height: 63.9vh;
+}
+
+.system-title {
+  margin-top: 3vh;
+  font-size: 2rem;
+}
+
+.pagination {
+  margin-top: 1vh;
+  .form-select {
+    width: fit-content;
+    margin-inline: 1vw;
+  }
+}
+
+.delete-icon {
+  align-self: flex-start;
+}
+
+.ticket-item {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.ticket-fields {
+  display: inline-flex;
+  flex-direction: column;
+  width: -webkit-fill-available;
+  align-items: flex-start;
+}
+
+.editable-fields {
+  display: inline-flex;
+  flex-direction: column;
+  width: -webkit-fill-available;
+
+  input,
+  select {
+    width: -webkit-fill-available;
+  }
+
+  textarea {
+    resize: none;
+    width: -webkit-fill-available;
+    height: 30vh;
+  }
+}
+
+.comments-container {
+  display: inline-flex;
+  flex-direction: column;
+}
